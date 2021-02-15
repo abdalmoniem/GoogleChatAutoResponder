@@ -1,0 +1,10 @@
+.vscode
+.vscode/*
+
+gcar/__pycache__
+gcar/__pycache__/*
+gcar/lib/__pycache__
+gcar/lib/__pycache__/*
+
+logs/*
+*.oauth_credentials

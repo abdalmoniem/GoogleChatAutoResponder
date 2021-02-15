@@ -1,0 +1,12 @@
+docopt
+enum34
+future
+futures
+requests
+dnspython  # optional requirement for sleekxmpp
+jsonpickle  # https://github.com/googleapis/oauth2client/issues/681
+gunicorn[gevent]
+google-api-python-client
+google-measurement-protocol==1.0.0
+git+https://github.com/simon-weber/oauth2client.git@4.1.4-rc.1#egg=oauth2client==4.1.4-rc.1
+git+https://github.com/simon-weber/SleekXMPP.git@1.5.0rc1#egg=sleekxmpp==1.5.0rc1

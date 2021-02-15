@@ -1,0 +1,9 @@
+{
+   "email": "email@domain.com",
+   "digest_time": "05:00 PM",
+   "digest_interval": null,
+   "response_lines": [
+      "Hello, I am not available now, I'll reply as soon as I'm finished.",
+      "This is an automated message, please do not reply!"
+   ]
+}
