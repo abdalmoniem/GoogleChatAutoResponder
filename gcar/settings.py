@@ -20,7 +20,6 @@ SECRETS_DIR = os.path.join(BASE_DIR, 'secrets')
 OAUTH_SCOPE = ' '.join(['https://www.googleapis.com/auth/googletalk', 'email'])
 
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER, EMAIL_HOST_PASSWORD = get_email_creds('email_creds.txt')
 DEFAULT_FROM_EMAIL = 'Google Chat Auto Responder <%s>' % EMAIL_HOST_USER

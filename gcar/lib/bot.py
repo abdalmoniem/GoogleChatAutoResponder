@@ -218,14 +218,14 @@ class AutoRespondBot(GChatBot):
                 self.logger.info("starting email server...")
                 
                 self.email_server = smtplib.SMTP(host=settings.EMAIL_HOST, port=settings.EMAIL_PORT)
-                if settings.EMAIL_USE_TLS:
-                    self.email_server.starttls()
+                self.email_server.starttls()
                 self.email_server.login(settings.EMAIL_HOST_USER, settings.EMAIL_HOST_PASSWORD)
                 
                 self.logger.info("email server started.")
             except Exception as ex:
-                self.logger.error("could not start email server, check internet connection.")
-                os._exit(ex.status)
+                self.logger.error(str(ex))
+                self.logger.error("could not start email server!")
+                os._exit(1)
             finally:
                 if self.send_email_notifications:
                     self.logger.info('email notifications configured as per message.')
