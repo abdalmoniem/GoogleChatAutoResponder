@@ -283,7 +283,7 @@ class AutoRespondBot(GChatBot):
                 self.logger.info("responding to %s's message via message. response:\n%s", jid, self.response)
                 msg.reply(self.response).send()
                 did_reply = True
-                self._sent_reply(jid, msg_txt)
+                self._update_response_throttler(jid, msg_txt)
 
             should_send_email = self.send_email_notifications
             notify_override = self.notification_overrides.get(from_name)
@@ -354,9 +354,9 @@ class AutoRespondBot(GChatBot):
                 # Message type is important; omitting it will silently discard the message.
                 self.logger.info("responding to %s via presence. message %r", from_jid, presence)
                 self.send_message(mto=from_jid, mbody=self.response, mtype='chat')
-                self._sent_reply(from_jid)
+                self._update_response_throttler(from_jid)
 
-    def _sent_reply(self, jid, message=None):
+    def _update_response_throttler(self, jid, message=None):
         """Perform any bookkeeping needed after a response is sent.
 
         Args:
